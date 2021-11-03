@@ -74,6 +74,13 @@ def VerificacionEdadMes(Dato1,Dato2):
     else:
         # Impresion de error por cualquier problema no implementado
         Errores("Error inesperado!")
+
+def CustomInput(Dato):
+    info = input(Dato)
+    if not info:
+        return 0
+    else:
+        return info
     
 if __name__ == "__main__":
 
@@ -81,7 +88,7 @@ if __name__ == "__main__":
 
     while True:
         # Aqui pregunto la edad
-        Edad = input('Edad ')
+        Edad = CustomInput('Edad ')
         if VerNumero(Edad):
             Edad = int(Edad)
             if EdadValida(Edad):
@@ -89,7 +96,7 @@ if __name__ == "__main__":
                 Encabezado()
                 print("Edad",Edad,'Se encuentra dentro del rango')
                 # Aqui pregunto el mes
-                Mes = input('Mes ')
+                Mes = CustomInput('Mes ')
                 if VerNumero(Mes):
                     Mes = int(Mes)
                     if MesValido(Mes):
